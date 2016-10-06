@@ -334,8 +334,8 @@
     <AppxPackagedFile Include="C:\Users\Ramdhan\.nuget\packages\System.Xml.XmlSerializer\4.0.10\lib\netcore50\System.Xml.XmlSerializer.dll">
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\RISET\UWP\BING MAPS\BING MAPS\Properties\Default.rd.xml">
-      <PackagePath>Properties\Default.rd.xml</PackagePath>
+    <AppxPackagedFile Include="D:\RISET\UWP\BING MAPS\BING MAPS\Assets\mappin.png">
+      <PackagePath>Assets\mappin.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\RISET\UWP\BING MAPS\BING MAPS\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
@@ -363,6 +363,9 @@
     <AppxPackagedFile Include="D:\RISET\UWP\BING MAPS\BING MAPS\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\RISET\UWP\BING MAPS\BING MAPS\Properties\Default.rd.xml">
+      <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\RISET\UWP\BING MAPS\BING MAPS\bin\x86\Debug\BING MAPS.xr.xml">
       <PackagePath>BING MAPS.xr.xml</PackagePath>

@@ -16,7 +16,7 @@
     <PackageRegistrationPath>
     </PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
-    <RegisteredManifestChecksum>539AF016DADAC2463A246DC1B070876DC3B6397C1C52CDA095F6542DD12525E0</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>75B6FD7385CA5219A6B3AA31B1BBC70838FAA5E018B7AE23CBB9E9AFEB0CF2F7</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>7f5daec8-6c63-4c9e-bd5c-1a1a882e5bd0_1.0.0.0_x86__18ee44w551w2p</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>7f5daec8-6c63-4c9e-bd5c-1a1a882e5bd0_18ee44w551w2p!App</RegisteredUserModeAppID>
     <RegisteredPackageID>7f5daec8-6c63-4c9e-bd5c-1a1a882e5bd0</RegisteredPackageID>
@@ -28,13 +28,13 @@
     <AppXManifest Include="D:\RISET\UWP\BING MAPS\BING MAPS\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-10-06T09:33:50.157</Modified>
+      <Modified>2016-10-06T14:19:09.007</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\RISET\UWP\BING MAPS\BING MAPS\bin\x86\Debug\BING MAPS.exe">
       <PackagePath>entrypoint\BING MAPS.exe</PackagePath>
-      <Modified>2016-10-06T09:33:48.462</Modified>
+      <Modified>2016-10-06T14:19:08.383</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ramdhan\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -448,9 +448,9 @@
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
       <Modified>2015-07-22T16:11:12.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\RISET\UWP\BING MAPS\BING MAPS\Properties\Default.rd.xml">
-      <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2016-10-06T07:58:29.423</Modified>
+    <AppxPackagedFile Include="D:\RISET\UWP\BING MAPS\BING MAPS\Assets\mappin.png">
+      <PackagePath>Assets\mappin.png</PackagePath>
+      <Modified>2016-10-06T13:59:39.340</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\RISET\UWP\BING MAPS\BING MAPS\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
@@ -486,6 +486,10 @@
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2015-09-20T10:20:42.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\RISET\UWP\BING MAPS\BING MAPS\Properties\Default.rd.xml">
+      <PackagePath>Properties\Default.rd.xml</PackagePath>
+      <Modified>2016-10-06T07:58:29.423</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\RISET\UWP\BING MAPS\BING MAPS\bin\x86\Debug\BING MAPS.xr.xml">
       <PackagePath>BING MAPS.xr.xml</PackagePath>
       <Modified>2016-10-06T09:33:48.073</Modified>
@@ -496,11 +500,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\RISET\UWP\BING MAPS\BING MAPS\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-10-06T09:33:49.646</Modified>
+      <Modified>2016-10-06T14:02:40.377</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\RISET\UWP\BING MAPS\BING MAPS\bin\x86\Debug\Core\BING MAPS.exe">
       <PackagePath>BING MAPS.exe</PackagePath>
-      <Modified>2016-10-06T09:33:50.141</Modified>
+      <Modified>2016-10-06T14:19:08.997</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

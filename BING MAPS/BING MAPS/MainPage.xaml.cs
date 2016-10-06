@@ -15,6 +15,8 @@ using Windows.UI.Xaml.Navigation;
 using Windows.Devices.Geolocation;
 using Windows.UI.Xaml.Controls.Maps;
 using System.Collections.ObjectModel;
+using Windows.Storage.Streams;
+using Windows.UI;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -26,6 +28,7 @@ namespace BING_MAPS
 
     public sealed partial class MainPage : Page
     {
+        RandomAccessStreamReference mapIconStrean;
         ObservableCollection<TipeMap> tipemaplist = new ObservableCollection<TipeMap>();
         ObservableCollection<LevelZoom> levelzoomlist = new ObservableCollection<LevelZoom>();
         public MainPage()
@@ -46,14 +49,14 @@ namespace BING_MAPS
             levelzoomlist.Add(new LevelZoom { Nama = "20x", Kode = 20 });
             combozoom.ItemsSource = levelzoomlist;
 
-
+            MapControl1.Loaded += MapControl_Loaded;
+            mapIconStrean = RandomAccessStreamReference.CreateFromUri(new Uri("ms-appx:///Assests/MapPin.png"));
 
 
         }
 
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        private void MapControl_Loaded(object sender, RoutedEventArgs e)
         {
-
             MapControl1.MapServiceToken = "ZOIsTgPzmcup0qy5gZ2e~bgLFX1LAnJrkxYFU5ue_iA~AjuP65xpgmXybft4W8kH0v-uG2QcEqFUKHYi7gCrTtf66p24phdhLHLzQKEq2OSD";
             MapControl1.Center = new Geopoint(new BasicGeoposition()
             {
@@ -64,6 +67,37 @@ namespace BING_MAPS
             MapControl1.ZoomLevel = 12;
             MapControl1.LandmarksVisible = true;
 
+            //konfigurasi mapicon
+            MapIcon mapicon1 = new MapIcon();
+            //untuk mengatur latitude dan longitude dari point
+            //Geopoint myPoint = new Geopoint(new BasicGeoposition() { Latitude = 51, Longitude = 0 });
+            mapicon1.Location = MapControl1.Center;
+            mapicon1.NormalizedAnchorPoint = new Point(0.5, 1.0);
+            mapicon1.Title = "Bandung";
+            mapicon1.Image = mapIconStrean;
+            mapicon1.ZIndex = 2;
+            //menambahkan icon map ke dalam mapcontrol
+            MapControl1.MapElements.Add(mapicon1);
+            //panggil fungsi
+            //tambahPolygon();
+
+            tambahpolyline();
+        }
+
+        private void tambahpolyline()
+        {
+            double centerLatitude = MapControl1.Center.Position.Latitude;
+            double centerLongitude = MapControl1.Center.Position.Longitude;
+            MapPolyline mapPolyline = new MapPolyline();
+            mapPolyline.Path = new Geopath(new List<BasicGeoposition>() {
+                new BasicGeoposition() {Latitude=centerLatitude-0.0005, Longitude=centerLongitude-0.001 },
+                new BasicGeoposition() {Latitude=centerLatitude+0.0005, Longitude=centerLongitude+0.001 },
+            });
+
+            mapPolyline.StrokeColor = Colors.Black;
+            mapPolyline.StrokeThickness = 3;
+            mapPolyline.StrokeDashed = true;
+            MapControl1.MapElements.Add(mapPolyline);
         }
 
         private void combostyle_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -77,6 +111,29 @@ namespace BING_MAPS
             LevelZoom selectedzoom = combozoom.SelectedItem as LevelZoom;
             MapControl1.ZoomLevel = selectedzoom.Kode;
         }
+
+        private void tambahPolygon()
+        {
+            MapPolygon polygon = new MapPolygon();
+            //ambil latitude dan longitude center map
+            double centerLatitude = MapControl1.Center.Position.Latitude;
+            double centerLongitude = MapControl1.Center.Position.Longitude;
+            //membuat path 
+            polygon.Path = new Geopath(new List<BasicGeoposition>()
+            {
+                new BasicGeoposition() {Latitude=centerLatitude+0.020, Longitude=centerLongitude-0.020},
+                new BasicGeoposition() {Latitude=centerLatitude-0.020, Longitude=centerLongitude-0.020},
+                new BasicGeoposition() {Latitude=centerLatitude-0.020, Longitude=centerLongitude+0.020},
+                new BasicGeoposition() {Latitude=centerLatitude+0.020, Longitude=centerLongitude+0.020},
+            });
+            //pengaturan polygin
+            polygon.ZIndex = 1; 
+            polygon.FillColor = Colors.Red;
+            polygon.StrokeColor = Colors.Blue;
+            polygon.StrokeThickness = 1;
+            polygon.StrokeDashed = false;
+            MapControl1.MapElements.Add(polygon);
+        }
     }
 
     public class TipeMap
@@ -85,6 +142,7 @@ namespace BING_MAPS
         public MapStyle Kode { get; set; }
         
     }
+
 
     public class LevelZoom
     {
